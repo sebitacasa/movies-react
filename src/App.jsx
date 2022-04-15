@@ -16,7 +16,7 @@ export function App() { // exporta esta funcion
              
                <header>
                
-                 <Link to="/"> <h1 className={styles.title}>Movies</h1></Link>
+                 <Link to="/"> <h1 className={styles.title}>M o V i E s</h1></Link>
                    
                 
                    

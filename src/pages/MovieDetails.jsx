@@ -1,18 +1,34 @@
 import movie from "./movie.json"
 import styles from "./MovieDetails.module.css"
 import { useEffect, useState } from  "react"
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom"
 import { get } from "../httpClient";
+import { Spinner } from "react-bootstrap";
+
 
 export function MovieDetails(){
     const { movieId } = useParams()
     const [movie, setMovie] = useState(null);
-
+    
+    
+    
     useEffect(() => {
+
+     
+
         get("/movie/" + movieId).then(data => {
-            setMovie(data);
+          setMovie(data);
+          
+       
         });
     },[movieId])
+
+
+   
+
+    
+
+    
 
     if(!movie){
         return null
@@ -30,6 +46,7 @@ export function MovieDetails(){
         </p>
         <p><strong>Description:</strong> {movie.overview}
         </p>
+       
       </div>
         </div>
 }
